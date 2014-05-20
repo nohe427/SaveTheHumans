@@ -9,7 +9,7 @@
             </Grid>
         </ControlTemplate>
     </Window.Resources>
-    <Grid Background="Black">
+    <Grid x:Name="grid" Background="Black" MouseMove="playArea_MouseMove" MouseLeave="playArea_MouseLeave">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="140"/>
             <ColumnDefinition/>
@@ -32,12 +32,12 @@
                     <GradientStop Color="#FF43E2DB" Offset="1"/>
                 </LinearGradientBrush>
             </Canvas.Background>
-            <StackPanel x:Name="human" Orientation="Vertical">
+            <StackPanel x:Name="human" Orientation="Vertical" MouseDown="human_MouseDown">
                 <Ellipse Fill="White" Height="10" Width="10" />
                 <Rectangle Fill="White" Height="10" Width="10" />
             </StackPanel>
             <TextBlock x:Name="gameOverText" Canvas.Left="237" TextWrapping="Wrap" Text="Game Over" Canvas.Top="218" FontFamily="Arial" FontSize="100" FontWeight="Bold" FontStyle="Italic"/>
-            <Rectangle x:Name="target" Height="50" Canvas.Left="810" Canvas.Top="130" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle x:Name="target" Height="50" Canvas.Left="810" Canvas.Top="130" Width="50" RenderTransformOrigin="0.5,0.5" MouseEnter="target_MouseEnter">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
